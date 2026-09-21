@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Background / Emblem Gradients -->
+    <linearGradient id="dhEmblemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#083822" />
+      <stop offset="45%" stop-color="#0b4a2e" />
+      <stop offset="100%" stop-color="#052c1a" />
+    </linearGradient>
+
+    <!-- Fairway Gradient -->
+    <linearGradient id="dhFairwayGrad" x1="0%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#146c43" />
+      <stop offset="100%" stop-color="#093f26" />
+    </linearGradient>
+
+    <!-- Golden Sun Gradient -->
+    <linearGradient id="dhSunGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="60%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fde68a" />
+    </linearGradient>
+
+    <!-- Gold Ribbon Gradient -->
+    <linearGradient id="dhGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f3c650" />
+      <stop offset="50%" stop-color="#d99f26" />
+      <stop offset="100%" stop-color="#b47814" />
+    </linearGradient>
+
+    <!-- Leaf Green Gradient -->
+    <linearGradient id="dhLeafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#073b22" />
+      <stop offset="60%" stop-color="#157a46" />
+      <stop offset="100%" stop-color="#1ba85f" />
+    </linearGradient>
+
+    <!-- Dark Green Text Gradient -->
+    <linearGradient id="dhTextGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0a5331" />
+      <stop offset="100%" stop-color="#0e693f" />
+    </linearGradient>
+
+    <clipPath id="dhEmblemClip">
+      <!-- Outer D-shape boundary -->
+      <path d="M 148 76 C 240 76 370 100 370 216 C 370 310 270 348 214 348 C 170 348 140 338 132 320 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- ================= EMBLEM CONTAINER ================= -->
+  <g id="dh-emblem" transform="translate(0, -10)">
+    <!-- Base D Body -->
+    <path
+      d="M 148 76 C 245 76 372 102 372 216 C 372 312 272 348 216 348 C 160 348 135 328 132 300 L 140 100 Z"
+      fill="url(#dhEmblemGrad)"
+    />
+
+    <!-- Sun on the horizon inside D -->
+    <circle cx="308" cy="235" r="42" fill="url(#dhSunGrad)" />
+
+    <!-- Rolling Green Hill / Fairway -->
+    <path
+      d="M 175 348 C 220 290 280 250 372 260 L 372 312 C 340 335 272 348 216 348 Z"
+      fill="url(#dhFairwayGrad)"
+    />
+
+    <!-- Golf Flagstick & Triangular Flag -->
+    <line x1="318" y1="218" x2="318" y2="262" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+    <polygon points="318,218 333,224 318,230" fill="#ffffff" />
+
+    <!-- White Golfer Silhouette in Powerful Follow-Through Swing -->
+    <g fill="#ffffff">
+      <!-- Golfer Head & Cap -->
+      <ellipse cx="261" cy="138" rx="14" ry="15" />
+      <path d="M 252 135 C 255 125 272 124 282 131 C 285 133 275 138 252 135 Z" /> <!-- Cap visor -->
+
+      <!-- Neck & Torso -->
+      <path d="M 250 152 C 242 165 238 185 240 215 C 242 245 246 270 248 285 L 268 275 C 265 245 264 210 270 180 C 274 162 265 152 250 152 Z" />
+
+      <!-- Left Arm & Shoulder swinging back -->
+      <path d="M 245 156 C 235 150 216 160 212 180 C 210 190 218 192 224 185 C 230 176 238 168 248 165 Z" />
+
+      <!-- Raised Arms holding club behind head -->
+      <path d="M 255 152 C 248 140 236 128 226 138 C 220 144 225 155 232 154 C 238 153 245 158 250 165 Z" />
+      <path d="M 235 134 C 240 128 254 135 258 146 Z" />
+
+      <!-- Golf Club Shaft extending back to the right -->
+      <line x1="236" y1="130" x2="340" y2="182" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+      <!-- Club Head (Driver) -->
+      <ellipse cx="342" cy="183" rx="6.5" ry="4.5" transform="rotate(28 342 183)" />
+
+      <!-- Hips & Swiveling Leg Follow-through -->
+      <path d="M 242 270 C 240 295 245 320 252 342 C 256 342 264 330 262 300 C 260 280 258 270 242 270 Z" />
+    </g>
+
+    <!-- Left Organic Flourish: Gold Head/Ball -->
+    <circle cx="174" cy="192" r="17" fill="url(#dhGoldGrad)" />
+
+    <!-- Left Organic Flourish: Gold Dynamic Swoosh Curve -->
+    <path
+      d="M 129 164 C 145 205 140 255 178 300 C 192 316 206 332 216 345 C 205 330 190 300 178 268 C 166 236 156 198 129 164 Z"
+      fill="url(#dhGoldGrad)"
+    />
+
+    <!-- Left Green Leaf Shapes (Ecology & Fairway) -->
+    <!-- Large Outer Leaf -->
+    <path
+      d="M 133 226 C 130 280 152 338 206 358 C 182 350 158 318 148 280 C 138 245 135 232 133 226 Z"
+      fill="url(#dhLeafGrad)"
+    />
+    <!-- Inner Leaf Accent -->
+    <path
+      d="M 160 270 C 168 310 188 340 210 354 C 196 344 180 320 174 290 C 168 268 164 265 160 270 Z"
+      fill="#0d5231"
+    />
+  </g>
+
+  <!-- ================= TYPOGRAPHY ================= -->
+  <!-- "Digital Heroes" -->
+  <g id="dh-wordmark" transform="translate(250, 420)">
+    <!-- Digital (Bold Charcoal) -->
+    <text
+      x="-8"
+      y="0"
+      text-anchor="end"
+      font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+      font-size="44"
+      font-weight="900"
+      letter-spacing="-1.2"
+      fill="#111827"
+    >Digital</text>
+
+    <!-- Heroes (Bold Forest Green) -->
+    <text
+      x="8"
+      y="0"
+      text-anchor="start"
+      font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+      font-size="44"
+      font-weight="900"
+      letter-spacing="-1.2"
+      fill="url(#dhTextGreen)"
+    >Heroes</text>
+
+    <!-- Cute Heart cutout inside letter 'o' of Heroes -->
+    <!-- The letter 'o' in Heroes is at approx x = 8 + 87 = 95, y = -14 -->
+    <path
+      d="M 94 -14 C 94 -18 90 -21 86 -21 C 82 -21 80 -18 80 -15 C 80 -18 78 -21 74 -21 C 70 -21 66 -18 66 -14 C 66 -9 74 -3 80 1 C 86 -3 94 -9 94 -14 Z"
+      fill="#ffffff"
+      transform="translate(43, -1) scale(0.65)"
+    />
+  </g>
+
+  <!-- Tagline: "PLAY • GIVE • CREATE IMPACT" -->
+  <g id="dh-tagline" transform="translate(250, 456)">
+    <text
+      x="0"
+      y="0"
+      text-anchor="middle"
+      font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+      font-size="12.5"
+      font-weight="700"
+      letter-spacing="5.5"
+      fill="#334155"
+    >
+      PLAY <tspan fill="#d97706" font-size="14">•</tspan> GIVE <tspan fill="#d97706" font-size="14">•</tspan> CREATE IMPACT
+    </text>
+  </g>
+</svg>
