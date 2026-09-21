@@ -1,0 +1,9 @@
+node_modules
+dist
+scratch
+.git
+.env
+.env.local
+npm-debug.log*
+*.mp4
+*.png
