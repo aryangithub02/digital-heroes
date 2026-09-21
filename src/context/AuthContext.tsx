@@ -19,7 +19,7 @@ interface AuthContextType {
   hideToast: () => void;
   refreshUser: () => Promise<void>;
   switchPersona: (personaId: string) => Promise<void>;
-  login: (email: string) => Promise<void>;
+  login: (email: string, password: string) => Promise<UserProfile>;
   signup: (data: any) => Promise<UserProfile>;
   logout: () => Promise<void>;
 }
@@ -73,13 +73,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
-  const login = async (email: string) => {
+  const login = async (email: string, password: string): Promise<UserProfile> => {
     setIsLoading(true);
     try {
-      const res = await api.login(email);
+      const res = await api.login(email, password);
       setCurrentUser(res.user);
       setActivePersona(res.user.id);
       showToast('success', `Welcome back, ${res.user.name}`);
+      return res.user;
     } catch (err: any) {
       showToast('error', err.message || 'Login failed');
       throw err;

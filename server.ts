@@ -13,7 +13,7 @@ import { DrawMethod, UserProfile } from './src/types';
 async function startServer() {
   await initPostgresDatabase();
   const app = express();
-  const PORT = 3000;
+  const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
   app.use(express.json({ limit: '15mb' }));
 
@@ -30,7 +30,7 @@ async function startServer() {
     if (requestedId === 'visitor') {
       return null;
     }
-    return db.getUserById(requestedId) || null;
+    return db.getUserById(requestedId) || db.getUserByEmail(requestedId) || null;
   };
 
   // Auth Middleware
@@ -81,8 +81,8 @@ async function startServer() {
   app.post('/api/auth/login', (req: Request, res: Response) => {
     try {
       const { email, password } = req.body;
-      if (!email) {
-        return res.status(400).json({ error: 'Email is required for login.' });
+      if (!email || !password) {
+        return res.status(400).json({ error: 'Email and password are required to sign in.' });
       }
       const user = db.authenticateUser(email, password);
       currentActiveUserId = user.id;
@@ -98,7 +98,8 @@ async function startServer() {
         name,
         email,
         password,
-        plan,
+        plan: rawPlan,
+        planId,
         selectedCharityId,
         charityContributionPct,
         handicapIndex,
@@ -106,9 +107,17 @@ async function startServer() {
         ghinOrMemberId,
       } = req.body;
 
-      if (!name || !email || !plan || !selectedCharityId) {
+      const plan = rawPlan || (planId === 'plan-yearly' ? 'yearly' : (planId === 'plan-monthly' ? 'monthly' : planId));
+
+      if (!name || !email || !password || !plan || !selectedCharityId) {
         return res.status(400).json({
-          error: 'Name, email, subscription plan, and selected charity are required.',
+          error: 'Name, email, password, subscription plan, and selected charity are required.',
+        });
+      }
+
+      if (typeof password !== 'string' || password.trim().length < 6) {
+        return res.status(400).json({
+          error: 'Password must be at least 6 characters long.',
         });
       }
 
@@ -534,7 +543,12 @@ async function startServer() {
   // Vite middleware in dev vs Static files in prod
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
-      server: { middlewareMode: true },
+      server: {
+        middlewareMode: true,
+        watch: {
+          ignored: ['**/data/**', '**/scratch/**', '**/.git/**', '**/dist/**'],
+        },
+      },
       appType: 'spa',
     });
     app.use(vite.middlewares);

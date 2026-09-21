@@ -73,7 +73,7 @@ export const api = {
     });
   },
 
-  async login(email: string, password?: string): Promise<{ success: boolean; user: UserProfile }> {
+  async login(email: string, password: string): Promise<{ success: boolean; user: UserProfile }> {
     const res = await request<{ success: boolean; user: UserProfile }>('/api/auth/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),

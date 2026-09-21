@@ -79,8 +79,37 @@ class Database {
       if (fs.existsSync(DB_FILE)) {
         const raw = fs.readFileSync(DB_FILE, 'utf-8');
         const parsed = JSON.parse(raw);
+        let mutated = false;
         if (!parsed.plans || parsed.plans.length === 0) {
           parsed.plans = [...INITIAL_PLANS];
+          mutated = true;
+        }
+        if (!parsed.users) {
+          parsed.users = [];
+          mutated = true;
+        }
+        // Ensure admin user always exists
+        if (!parsed.users.some((u: any) => u.email === 'admin@digitalheroes.co.in' || u.role === 'admin' || u.id === 'user-admin')) {
+          const defaultSalt = generateSalt();
+          const defaultHash = hashPassword('DigitalHeroes2026!', defaultSalt);
+          const adminUsers = INITIAL_USERS.map((u) => ({
+            ...u,
+            passwordSalt: defaultSalt,
+            passwordHash: defaultHash,
+          }));
+          parsed.users.unshift(...adminUsers);
+          mutated = true;
+        }
+        if (!parsed.draws || parsed.draws.length === 0) {
+          parsed.draws = [...INITIAL_DRAWS];
+          mutated = true;
+        }
+        if (!parsed.charities || parsed.charities.length === 0) {
+          parsed.charities = [...INITIAL_CHARITIES];
+          mutated = true;
+        }
+        if (mutated) {
+          this.save(parsed);
         }
         return parsed;
       }
@@ -241,12 +270,17 @@ class Database {
       throw new Error(`No account found with email "${email}".`);
     }
 
-    // If password provided, verify hash
-    if (password && user.passwordHash && user.passwordSalt) {
-      const calculatedHash = hashPassword(password, user.passwordSalt);
-      if (calculatedHash !== user.passwordHash) {
-        throw new Error('Invalid email or password.');
-      }
+    if (!password) {
+      throw new Error('Password is required.');
+    }
+
+    if (!user.passwordHash || !user.passwordSalt) {
+      throw new Error('Account security credentials not configured.');
+    }
+
+    const calculatedHash = hashPassword(password, user.passwordSalt);
+    if (calculatedHash !== user.passwordHash) {
+      throw new Error('Invalid email or password.');
     }
 
     const { passwordHash, passwordSalt, ...safeUser } = user;
@@ -270,6 +304,10 @@ class Database {
       throw new Error(`An account with email ${userData.email} already exists.`);
     }
 
+    if (!userData.password || userData.password.trim().length < 6) {
+      throw new Error('Password is required and must be at least 6 characters.');
+    }
+
     const planCode = userData.plan || 'monthly';
     const plan = this.getSubscriptionPlanById(`plan-${planCode}`) || this.getSubscriptionPlanById(planCode);
     const price = plan ? plan.priceINR : planCode === 'yearly' ? 9990 : 999;
@@ -288,7 +326,7 @@ class Database {
     }
 
     const salt = generateSalt();
-    const hash = hashPassword(userData.password || 'DigitalHeroes2026!', salt);
+    const hash = hashPassword(userData.password.trim(), salt);
 
     const newUser: UserProfile = {
       id: `user-${Date.now()}`,
@@ -846,7 +884,8 @@ class Database {
         timestamp: new Date().toISOString(),
         resultId: draw.id,
       });
-      this.save();
+      // Do not call this.save() on simulation — simulation is an in-memory preview.
+      // Official persistence happens on publishDraw.
     }
 
     return {

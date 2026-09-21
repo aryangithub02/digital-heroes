@@ -1,6 +1,6 @@
 /**
  * Digital Heroes — Main Application Shell
- * Connects AuthProvider, Evaluator Demo Bar, Modular Pages, and Verification Modals.
+ * Connects AuthProvider, Role-segregated views, Modular Pages, and Verification Modals.
  */
 
 import React, { useEffect, useState } from 'react';
@@ -15,6 +15,7 @@ import { ProofUploadModal } from './components/ProofUploadModal';
 import { CharityDetailModal } from './components/CharityDetailModal';
 import { DirectDonationModal } from './components/DirectDonationModal';
 import { AuthModal } from './components/AuthModal';
+import { AdminLoginModal } from './components/AdminLoginModal';
 import { DigitalHeroesLogo } from './components/DigitalHeroesLogo';
 
 import { HomePage } from './pages/HomePage';
@@ -25,20 +26,22 @@ import { AdminPage } from './pages/AdminPage';
 import {
   AlertCircle,
   CheckCircle2,
-  Heart,
-  HelpCircle,
   Info,
-  Shield,
-  Sparkles,
-  Trophy,
   X,
 } from 'lucide-react';
 
 const MainApp: React.FC = () => {
-  const { currentUser, isVisitor, toast, hideToast } = useAuth();
+  const { currentUser, isVisitor, isAdmin, isSubscriber, toast, hideToast } = useAuth();
 
   // Navigation view state: 'home' | 'charities' | 'draws' | 'dashboard' | 'admin'
-  const [currentView, setCurrentView] = useState<string>('home');
+  const [currentView, setCurrentView] = useState<string>(() => {
+    if (typeof window !== 'undefined') {
+      const savedUser = localStorage.getItem('dh_session_user_id');
+      if (savedUser === 'user-admin') return 'admin';
+      if (savedUser && savedUser !== 'visitor') return 'dashboard';
+    }
+    return 'home';
+  });
 
   // Shared application datasets
   const [charities, setCharities] = useState<Charity[]>([]);
@@ -60,6 +63,7 @@ const MainApp: React.FC = () => {
   const [proofWinner, setProofWinner] = useState<WinnerRecord | null>(null);
   const [detailCharity, setDetailCharity] = useState<Charity | null>(null);
   const [donationCharity, setDonationCharity] = useState<Charity | null>(null);
+  const [isAdminLoginOpen, setIsAdminLoginOpen] = useState<boolean>(false);
 
   const loadData = async () => {
     try {
@@ -72,7 +76,7 @@ const MainApp: React.FC = () => {
       setDraws(Array.isArray(drawsRes) ? drawsRes : (drawsRes as any).draws || []);
       setWinners(winnersRes.winners || (Array.isArray(winnersRes) ? winnersRes : []));
 
-      if (currentUser) {
+      if (currentUser && currentUser.role === 'subscriber') {
         try {
           const scoresRes = await api.getMyScores();
           setUserScores(scoresRes.scores || []);
@@ -91,6 +95,26 @@ const MainApp: React.FC = () => {
     loadData();
   }, [currentUser]);
 
+  // Synchronize view strictly by role
+  useEffect(() => {
+    if (isAdmin) {
+      // If admin is on subscriber dashboard or home on login, switch to admin dashboard
+      if (currentView === 'dashboard' || currentView === 'home') {
+        setCurrentView('admin');
+      }
+    } else if (isSubscriber) {
+      // If subscriber is on admin view, switch to subscriber dashboard
+      if (currentView === 'admin') {
+        setCurrentView('dashboard');
+      }
+    } else if (isVisitor) {
+      // If visitor is on subscriber dashboard, switch to home
+      if (currentView === 'dashboard') {
+        setCurrentView('home');
+      }
+    }
+  }, [currentUser, isAdmin, isSubscriber, isVisitor, currentView]);
+
   const currentDraw = draws.find((d) => d.status === 'upcoming') || draws[0] || null;
   const featuredCharity = charities.find((c) => c.featured) || charities[0] || null;
 
@@ -105,60 +129,126 @@ const MainApp: React.FC = () => {
         onOpenExplain={(topic) => setExplainTopic(topic)}
       />
 
-      {/* 3. Main Dynamic Content Area */}
+      {/* 2. Main Dynamic Content Area - Segregated by Role */}
       <main className="flex-1">
-        {currentView === 'home' && (
-          <HomePage
-            currentDraw={currentDraw}
-            featuredCharity={featuredCharity}
-            onNavigate={setCurrentView}
-            onOpenAuth={(mode) => setAuthModal({ isOpen: true, mode })}
-            onOpenExplain={(topic) => setExplainTopic(topic)}
-            onSelectCharity={(charity) => setDetailCharity(charity)}
-          />
-        )}
+        {isAdmin ? (
+          /* ================= ONLY ADMIN VIEWS ================= */
+          <>
+            {currentView === 'charities' && (
+              <CharityDirectoryPage
+                charities={charities}
+                onSelectCharity={(charity) => setDetailCharity(charity)}
+                onOpenDonate={(charity) => setDonationCharity(charity)}
+                onOpenExplain={(topic) => setExplainTopic(topic)}
+                onRefresh={loadData}
+              />
+            )}
 
-        {currentView === 'charities' && (
-          <CharityDirectoryPage
-            charities={charities}
-            onSelectCharity={(charity) => setDetailCharity(charity)}
-            onOpenDonate={(charity) => setDonationCharity(charity)}
-            onOpenExplain={(topic) => setExplainTopic(topic)}
-            onRefresh={loadData}
-          />
-        )}
+            {currentView === 'draws' && (
+              <DrawsPage
+                draws={draws}
+                winners={winners}
+                onOpenExplain={(topic) => setExplainTopic(topic)}
+              />
+            )}
 
-        {currentView === 'draws' && (
-          <DrawsPage
-            draws={draws}
-            winners={winners}
-            onOpenExplain={(topic) => setExplainTopic(topic)}
-          />
-        )}
+            {(currentView === 'admin' || (currentView !== 'charities' && currentView !== 'draws')) && (
+              <AdminPage
+                draws={draws}
+                onOpenExplain={(topic) => setExplainTopic(topic)}
+                onRefreshData={loadData}
+              />
+            )}
+          </>
+        ) : isSubscriber ? (
+          /* ================= ONLY SUBSCRIBER VIEWS ================= */
+          <>
+            {currentView === 'home' && (
+              <HomePage
+                currentDraw={currentDraw}
+                featuredCharity={featuredCharity}
+                onNavigate={setCurrentView}
+                onOpenAuth={(mode) => setAuthModal({ isOpen: true, mode })}
+                onOpenExplain={(topic) => setExplainTopic(topic)}
+                onSelectCharity={(charity) => setDetailCharity(charity)}
+              />
+            )}
 
-        {currentView === 'dashboard' && (
-          <SubscriberDashboard
-            charities={charities}
-            upcomingDraw={currentDraw}
-            onOpenScoreModal={(scoreToEdit) =>
-              setScoreModal({ isOpen: true, scoreToEdit: scoreToEdit || null })
-            }
-            onOpenProofModal={(w) => setProofWinner(w)}
-            onOpenExplain={(topic) => setExplainTopic(topic)}
-            onNavigate={setCurrentView}
-          />
-        )}
+            {currentView === 'charities' && (
+              <CharityDirectoryPage
+                charities={charities}
+                onSelectCharity={(charity) => setDetailCharity(charity)}
+                onOpenDonate={(charity) => setDonationCharity(charity)}
+                onOpenExplain={(topic) => setExplainTopic(topic)}
+                onRefresh={loadData}
+              />
+            )}
 
-        {currentView === 'admin' && (
-          <AdminPage
-            draws={draws}
-            onOpenExplain={(topic) => setExplainTopic(topic)}
-            onRefreshData={loadData}
-          />
+            {currentView === 'draws' && (
+              <DrawsPage
+                draws={draws}
+                winners={winners}
+                onOpenExplain={(topic) => setExplainTopic(topic)}
+              />
+            )}
+
+            {(currentView === 'dashboard' || (currentView !== 'home' && currentView !== 'charities' && currentView !== 'draws')) && (
+              <SubscriberDashboard
+                charities={charities}
+                upcomingDraw={currentDraw}
+                onOpenScoreModal={(scoreToEdit) =>
+                  setScoreModal({ isOpen: true, scoreToEdit: scoreToEdit || null })
+                }
+                onOpenProofModal={(w) => setProofWinner(w)}
+                onOpenExplain={(topic) => setExplainTopic(topic)}
+                onNavigate={setCurrentView}
+              />
+            )}
+          </>
+        ) : (
+          /* ================= PUBLIC VISITOR VIEWS ================= */
+          <>
+            {currentView === 'home' && (
+              <HomePage
+                currentDraw={currentDraw}
+                featuredCharity={featuredCharity}
+                onNavigate={setCurrentView}
+                onOpenAuth={(mode) => setAuthModal({ isOpen: true, mode })}
+                onOpenExplain={(topic) => setExplainTopic(topic)}
+                onSelectCharity={(charity) => setDetailCharity(charity)}
+              />
+            )}
+
+            {currentView === 'charities' && (
+              <CharityDirectoryPage
+                charities={charities}
+                onSelectCharity={(charity) => setDetailCharity(charity)}
+                onOpenDonate={(charity) => setDonationCharity(charity)}
+                onOpenExplain={(topic) => setExplainTopic(topic)}
+                onRefresh={loadData}
+              />
+            )}
+
+            {currentView === 'draws' && (
+              <DrawsPage
+                draws={draws}
+                winners={winners}
+                onOpenExplain={(topic) => setExplainTopic(topic)}
+              />
+            )}
+
+            {currentView === 'admin' && (
+              <AdminPage
+                draws={draws}
+                onOpenExplain={(topic) => setExplainTopic(topic)}
+                onRefreshData={loadData}
+              />
+            )}
+          </>
         )}
       </main>
 
-      {/* 4. Footer */}
+      {/* 3. Footer */}
       <footer className="border-t border-slate-200 bg-white py-12 px-4 sm:px-6 lg:px-8 text-xs text-slate-500">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-1.5 text-center md:text-left">
@@ -183,13 +273,21 @@ const MainApp: React.FC = () => {
             </button>
           </div>
 
-          <div className="text-[11px] text-slate-400 font-mono">
-            Digital Heroes Platform
+          <div className="flex items-center gap-4 text-[11px] text-slate-400 font-mono">
+            <span>Digital Heroes Platform</span>
+            {isVisitor && (
+              <button
+                onClick={() => setIsAdminLoginOpen(true)}
+                className="text-slate-400 hover:text-indigo-600 font-sans transition-colors"
+              >
+                Admin Portal
+              </button>
+            )}
           </div>
         </div>
       </footer>
 
-      {/* 5. Modals & Overlays */}
+      {/* 4. Modals & Overlays */}
       <ExplainabilityModal topic={explainTopic} onClose={() => setExplainTopic(null)} />
 
       <AuthModal
@@ -204,6 +302,15 @@ const MainApp: React.FC = () => {
           } else {
             setCurrentView('dashboard');
           }
+        }}
+      />
+
+      <AdminLoginModal
+        isOpen={isAdminLoginOpen}
+        onClose={() => setIsAdminLoginOpen(false)}
+        onSuccess={() => {
+          loadData();
+          setCurrentView('admin');
         }}
       />
 
@@ -237,7 +344,7 @@ const MainApp: React.FC = () => {
         onSuccess={loadData}
       />
 
-      {/* 6. Notification Toast Banner */}
+      {/* 5. Notification Toast Banner */}
       {toast && (
         <div
           id="global-toast-notification"

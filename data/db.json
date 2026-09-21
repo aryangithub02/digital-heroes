@@ -56,6 +56,174 @@
   ],
   "users": [
     {
+      "id": "user-1790015936420",
+      "email": "sub_1790015936397@example.com",
+      "name": "Verified Subscriber",
+      "role": "subscriber",
+      "passwordSalt": "90e437b167e8cdf8cb79b74211ee7300",
+      "passwordHash": "60e83a732388282a35a39cd0c66033ba016f66ca687502be3d4c525ec9738f63a2f1162e765b4713ba77685d603d0a1e0d0b02362eb781a3a5759d87aa23f749",
+      "handicapIndex": 8.4,
+      "homeClub": "Pebble Beach",
+      "ghinOrMemberId": "DH-132712",
+      "createdAt": "2026-09-21T18:38:56.402Z",
+      "subscription": {
+        "plan": "monthly",
+        "planId": "plan-monthly",
+        "status": "active",
+        "price": 999,
+        "billingInterval": "month",
+        "startDate": "2026-09-21T18:38:56.402Z",
+        "renewalDate": "2026-10-21T18:38:56.402Z",
+        "charityContributionPct": 15,
+        "selectedCharityId": "charity-macmillan",
+        "autoRenew": true
+      }
+    },
+    {
+      "id": "user-1790012047248",
+      "email": "aryanmotghare92@gmail.com",
+      "name": "Aryan Motghare",
+      "role": "subscriber",
+      "passwordSalt": "34308185b52c472abc2a6bc261e995bc",
+      "passwordHash": "032fb41d800f37bc1aa90c4480e85a0cab50fbb5a533373261e56da5c83710bf57ebdca5ca3f181a7381f847fe275163b27be1a575fa20951bf27af8ae030611",
+      "handicapIndex": 14.2,
+      "homeClub": "Wentworth Club",
+      "ghinOrMemberId": "DH-457002",
+      "createdAt": "2026-09-21T17:34:07.235Z",
+      "subscription": {
+        "plan": "monthly",
+        "planId": "plan-monthly",
+        "status": "active",
+        "price": 999,
+        "billingInterval": "month",
+        "startDate": "2026-09-21T17:34:07.235Z",
+        "renewalDate": "2026-10-21T17:34:07.235Z",
+        "charityContributionPct": 15,
+        "selectedCharityId": "charity-macmillan",
+        "autoRenew": true
+      }
+    },
+    {
+      "id": "user-1789977598422",
+      "email": "rory.mcilroy.1789977598409@example.com",
+      "name": "Rory McIlroy",
+      "role": "subscriber",
+      "passwordSalt": "467bde0afb4256e39dc86e87650459b9",
+      "passwordHash": "eac5092c246fc7531dd47ad8768381f981304e6d14e7a79ac3e7414f4dc1cf9b2ed2788a86b11eee407528ccad06426e38e7614f3152790a8821e6b57e12624b",
+      "handicapIndex": 2.1,
+      "homeClub": "Holywood Golf Club",
+      "ghinOrMemberId": "HGC-9921",
+      "createdAt": "2026-09-21T07:59:58.409Z",
+      "subscription": {
+        "plan": "monthly",
+        "planId": "plan-monthly",
+        "status": "active",
+        "price": 999,
+        "billingInterval": "month",
+        "startDate": "2026-09-21T07:59:58.409Z",
+        "renewalDate": "2026-10-21T07:59:58.409Z",
+        "charityContributionPct": 25,
+        "selectedCharityId": "charity-macmillan",
+        "autoRenew": true
+      }
+    },
+    {
+      "id": "user-1789977589870",
+      "email": "test.golfer.1789977589863@example.com",
+      "name": "Tiger Woods",
+      "role": "subscriber",
+      "passwordSalt": "34854d99532339659539370ad4ecbca8",
+      "passwordHash": "e1ebced54045a01c81ecd53d49e1743569ae52f42bdab6a14b9d861a9938a2faa015d170773b00da3c08bb5b3863d1605278b82ad1cad5a44a53fd3ba53a83ca",
+      "handicapIndex": 0.5,
+      "homeClub": "Augusta National",
+      "ghinOrMemberId": "DH-919618",
+      "createdAt": "2026-09-21T07:59:49.863Z",
+      "subscription": {
+        "plan": "monthly",
+        "planId": "plan-monthly",
+        "status": "active",
+        "price": 999,
+        "billingInterval": "month",
+        "startDate": "2026-09-21T07:59:49.863Z",
+        "renewalDate": "2026-10-21T07:59:49.863Z",
+        "charityContributionPct": 20,
+        "selectedCharityId": "charity-ocean",
+        "autoRenew": true
+      }
+    },
+    {
+      "id": "user-1789977484062",
+      "email": "rory.mcilroy.1789977484054@example.com",
+      "name": "Rory McIlroy",
+      "role": "subscriber",
+      "passwordSalt": "7abe687bbdd11bf561705d676980f240",
+      "passwordHash": "e1fb06658c25b9e492e544ec468af68df8eb88c5ff114f5fc9a02a3cc4bfd9a324e2436d6b121e30172345d1a597aa43a028eb9e507fc9bfa7045266c923f40a",
+      "handicapIndex": 2.1,
+      "homeClub": "Holywood Golf Club",
+      "ghinOrMemberId": "HGC-9921",
+      "createdAt": "2026-09-21T07:58:04.054Z",
+      "subscription": {
+        "plan": "monthly",
+        "planId": "plan-monthly",
+        "status": "active",
+        "price": 999,
+        "billingInterval": "month",
+        "startDate": "2026-09-21T07:58:04.054Z",
+        "renewalDate": "2026-10-21T07:58:04.054Z",
+        "charityContributionPct": 25,
+        "selectedCharityId": "charity-macmillan",
+        "autoRenew": true
+      }
+    },
+    {
+      "id": "user-1789977466883",
+      "email": "rory.mcilroy.1789977466876@example.com",
+      "name": "Rory McIlroy",
+      "role": "subscriber",
+      "passwordSalt": "ceeb418fb44afb737c523b82343bc9b8",
+      "passwordHash": "8b4e42b906e259d11d5a77fba74eb89b0f55602d1eb4f8d0a7f5825743b7b367fc809ba70db1d17d97ac942db4898d95182e02c58b0f1e3f5e6e9db0e10fc9b3",
+      "handicapIndex": 2.1,
+      "homeClub": "Holywood Golf Club",
+      "ghinOrMemberId": "HGC-9921",
+      "createdAt": "2026-09-21T07:57:46.876Z",
+      "subscription": {
+        "plan": "monthly",
+        "planId": "plan-monthly",
+        "status": "active",
+        "price": 999,
+        "billingInterval": "month",
+        "startDate": "2026-09-21T07:57:46.876Z",
+        "renewalDate": "2026-10-21T07:57:46.876Z",
+        "charityContributionPct": 25,
+        "selectedCharityId": "charity-macmillan",
+        "autoRenew": true
+      }
+    },
+    {
+      "id": "user-1789977447000",
+      "email": "test.golfer.1789977446994@example.com",
+      "name": "Tiger Woods",
+      "role": "subscriber",
+      "passwordSalt": "250bad16541dde3d82c1879172af35e1",
+      "passwordHash": "ebe95413e85821f477001e208cd012f6f54d017d6d0e22ffe92d667633ceaab4feeca8a4420014ea1393bb4960e29a823ac684e72ed6f913036d7a7d7fb3407f",
+      "handicapIndex": 0.5,
+      "homeClub": "Augusta National",
+      "ghinOrMemberId": "DH-210232",
+      "createdAt": "2026-09-21T07:57:26.994Z",
+      "subscription": {
+        "plan": "monthly",
+        "planId": "plan-monthly",
+        "status": "active",
+        "price": 999,
+        "billingInterval": "month",
+        "startDate": "2026-09-21T07:57:26.994Z",
+        "renewalDate": "2026-10-21T07:57:26.994Z",
+        "charityContributionPct": 20,
+        "selectedCharityId": "charity-ocean",
+        "autoRenew": true
+      }
+    },
+    {
       "id": "user-admin",
       "email": "admin@digitalheroes.co.in",
       "name": "Marcus Vance",
@@ -81,7 +249,228 @@
       "passwordHash": "ebcd0f200acf031a817240f00d701a66a193c7dffef9227b9127f0e4a2aa869487b69f0fccadaa37766bc0a12a1b207469779257e9c40654360df8082558f787"
     }
   ],
-  "scores": [],
+  "scores": [
+    {
+      "id": "score-1789977447033-904",
+      "userId": "user-1789977447000",
+      "date": "2026-09-15",
+      "score": 42,
+      "course": "Augusta National",
+      "holes": 18,
+      "handicapApplied": 1,
+      "createdAt": "2026-09-21T07:57:27.033Z"
+    },
+    {
+      "id": "score-1789977447032-931",
+      "userId": "user-1789977447000",
+      "date": "2026-09-14",
+      "score": 40,
+      "course": "Augusta National",
+      "holes": 18,
+      "handicapApplied": 1,
+      "createdAt": "2026-09-21T07:57:27.032Z"
+    },
+    {
+      "id": "score-1789977447031-450",
+      "userId": "user-1789977447000",
+      "date": "2026-09-13",
+      "score": 38,
+      "course": "Augusta National",
+      "holes": 18,
+      "handicapApplied": 1,
+      "createdAt": "2026-09-21T07:57:27.031Z"
+    },
+    {
+      "id": "score-1789977447030-217",
+      "userId": "user-1789977447000",
+      "date": "2026-09-12",
+      "score": 36,
+      "course": "Augusta National",
+      "holes": 18,
+      "handicapApplied": 1,
+      "createdAt": "2026-09-21T07:57:27.030Z"
+    },
+    {
+      "id": "score-1789977447029-827",
+      "userId": "user-1789977447000",
+      "date": "2026-09-11",
+      "score": 34,
+      "course": "Augusta National",
+      "holes": 18,
+      "handicapApplied": 1,
+      "createdAt": "2026-09-21T07:57:27.029Z"
+    },
+    {
+      "id": "score-1789977466886-82",
+      "userId": "user-1789977466883",
+      "date": "2026-09-21",
+      "score": 38,
+      "course": "Royal County Down",
+      "holes": 18,
+      "handicapApplied": 2,
+      "createdAt": "2026-09-21T07:57:46.886Z"
+    },
+    {
+      "id": "score-1789977466885-694",
+      "userId": "user-1789977466883",
+      "date": "2026-09-20",
+      "score": 35,
+      "course": "Royal County Down",
+      "holes": 18,
+      "handicapApplied": 2,
+      "createdAt": "2026-09-21T07:57:46.885Z"
+    },
+    {
+      "id": "score-1789977484069-916",
+      "userId": "user-1789977484062",
+      "date": "2026-09-20",
+      "score": 44,
+      "course": "Royal County Down",
+      "holes": 18,
+      "handicapApplied": 2,
+      "createdAt": "2026-09-21T07:58:04.069Z"
+    },
+    {
+      "id": "score-1789977484068-427",
+      "userId": "user-1789977484062",
+      "date": "2026-09-19",
+      "score": 42,
+      "course": "Royal County Down",
+      "holes": 18,
+      "handicapApplied": 2,
+      "createdAt": "2026-09-21T07:58:04.068Z"
+    },
+    {
+      "id": "score-1789977484067-693",
+      "userId": "user-1789977484062",
+      "date": "2026-09-18",
+      "score": 40,
+      "course": "Royal County Down",
+      "holes": 18,
+      "handicapApplied": 2,
+      "createdAt": "2026-09-21T07:58:04.067Z"
+    },
+    {
+      "id": "score-1789977484066-242",
+      "userId": "user-1789977484062",
+      "date": "2026-09-17",
+      "score": 38,
+      "course": "Royal County Down",
+      "holes": 18,
+      "handicapApplied": 2,
+      "createdAt": "2026-09-21T07:58:04.066Z"
+    },
+    {
+      "id": "score-1789977484065-601",
+      "userId": "user-1789977484062",
+      "date": "2026-09-16",
+      "score": 35,
+      "course": "Royal County Down",
+      "holes": 18,
+      "handicapApplied": 2,
+      "createdAt": "2026-09-21T07:58:04.065Z"
+    },
+    {
+      "id": "score-1789977589910-104",
+      "userId": "user-1789977589870",
+      "date": "2026-09-15",
+      "score": 42,
+      "course": "Augusta National",
+      "holes": 18,
+      "handicapApplied": 1,
+      "createdAt": "2026-09-21T07:59:49.910Z"
+    },
+    {
+      "id": "score-1789977589908-374",
+      "userId": "user-1789977589870",
+      "date": "2026-09-14",
+      "score": 40,
+      "course": "Augusta National",
+      "holes": 18,
+      "handicapApplied": 1,
+      "createdAt": "2026-09-21T07:59:49.908Z"
+    },
+    {
+      "id": "score-1789977589907-579",
+      "userId": "user-1789977589870",
+      "date": "2026-09-13",
+      "score": 38,
+      "course": "Augusta National",
+      "holes": 18,
+      "handicapApplied": 1,
+      "createdAt": "2026-09-21T07:59:49.907Z"
+    },
+    {
+      "id": "score-1789977589907-134",
+      "userId": "user-1789977589870",
+      "date": "2026-09-12",
+      "score": 36,
+      "course": "Augusta National",
+      "holes": 18,
+      "handicapApplied": 1,
+      "createdAt": "2026-09-21T07:59:49.907Z"
+    },
+    {
+      "id": "score-1789977589906-615",
+      "userId": "user-1789977589870",
+      "date": "2026-09-11",
+      "score": 34,
+      "course": "Augusta National",
+      "holes": 18,
+      "handicapApplied": 1,
+      "createdAt": "2026-09-21T07:59:49.906Z"
+    },
+    {
+      "id": "score-1789977598436-428",
+      "userId": "user-1789977598422",
+      "date": "2026-09-20",
+      "score": 44,
+      "course": "Royal County Down",
+      "holes": 18,
+      "handicapApplied": 2,
+      "createdAt": "2026-09-21T07:59:58.436Z"
+    },
+    {
+      "id": "score-1789977598433-174",
+      "userId": "user-1789977598422",
+      "date": "2026-09-19",
+      "score": 42,
+      "course": "Royal County Down",
+      "holes": 18,
+      "handicapApplied": 2,
+      "createdAt": "2026-09-21T07:59:58.433Z"
+    },
+    {
+      "id": "score-1789977598432-482",
+      "userId": "user-1789977598422",
+      "date": "2026-09-18",
+      "score": 40,
+      "course": "Royal County Down",
+      "holes": 18,
+      "handicapApplied": 2,
+      "createdAt": "2026-09-21T07:59:58.432Z"
+    },
+    {
+      "id": "score-1789977598429-83",
+      "userId": "user-1789977598422",
+      "date": "2026-09-17",
+      "score": 38,
+      "course": "Royal County Down",
+      "holes": 18,
+      "handicapApplied": 2,
+      "createdAt": "2026-09-21T07:59:58.429Z"
+    },
+    {
+      "id": "score-1789977598426-146",
+      "userId": "user-1789977598422",
+      "date": "2026-09-16",
+      "score": 35,
+      "course": "Royal County Down",
+      "holes": 18,
+      "handicapApplied": 2,
+      "createdAt": "2026-09-21T07:59:58.427Z"
+    }
+  ],
   "charities": [
     {
       "id": "charity-gosh",
@@ -116,8 +505,8 @@
       "mission": "Giving people with cancer the specialized medical nursing, guidance, and financial grants they urgently need.",
       "imageUrl": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=800&q=80",
       "impactStatement": "Every ₹2,500 ($30) pays for a registered Macmillan nurse for an hour, helping someone through critical moments.",
-      "totalRaised": 0,
-      "supporterCount": 0,
+      "totalRaised": 1050,
+      "supporterCount": 5,
       "featured": true,
       "active": true,
       "taxId": "UK-CHARITY-261017",
@@ -188,8 +577,8 @@
       "mission": "To revitalize damaged coastal ecosystems through direct physical intervention, community dive programs, and sustainable marine bio-sanctuaries.",
       "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80",
       "impactStatement": "Every ₹2,500 ($30) contributed funds the fabrication and underwater deployment of biological coral nursery substrate.",
-      "totalRaised": 0,
-      "supporterCount": 0,
+      "totalRaised": 400,
+      "supporterCount": 2,
       "featured": false,
       "active": true,
       "taxId": "80G-ENV-2024-9912",
@@ -298,6 +687,42 @@
       "active": true,
       "taxId": "80G-ENV-2025-1104",
       "events": []
+    },
+    {
+      "name": "Test Junior Golf Foundation",
+      "category": "youth",
+      "tagline": "Supporting young golfers",
+      "description": "Test description",
+      "mission": "Test mission",
+      "imageUrl": "https://images.unsplash.com/photo-test",
+      "impactStatement": "₹1,000 sponsors 1 round",
+      "active": true,
+      "featured": false,
+      "taxId": "TEST-TAX-001",
+      "events": [],
+      "id": "charity-1789977447013",
+      "totalRaised": 5000,
+      "supporterCount": 0,
+      "createdAt": "2026-09-21T07:57:27.013Z",
+      "updatedAt": "2026-09-21T07:57:27.013Z"
+    },
+    {
+      "name": "Test Junior Golf Foundation",
+      "category": "youth",
+      "tagline": "Supporting young golfers",
+      "description": "Test description",
+      "mission": "Test mission",
+      "imageUrl": "https://images.unsplash.com/photo-test",
+      "impactStatement": "₹1,000 sponsors 1 round",
+      "active": true,
+      "featured": false,
+      "taxId": "TEST-TAX-001",
+      "events": [],
+      "id": "charity-1789977589881",
+      "totalRaised": 5000,
+      "supporterCount": 0,
+      "createdAt": "2026-09-21T07:59:49.881Z",
+      "updatedAt": "2026-09-21T07:59:49.881Z"
     }
   ],
   "draws": [
@@ -349,11 +774,876 @@
           "rolloverAmount": 0
         }
       }
+    },
+    {
+      "id": "DRW-TEST-1789977447034",
+      "name": "October 2026 Test Invitational Draw",
+      "monthYear": "2026-10",
+      "drawDate": "2026-10-31",
+      "status": "published",
+      "drawMethod": "algorithmic",
+      "drawMethodRationale": "Standard Lottery Draw: 5 distinct numbers uniformly sampled at random across the 1–45 Stableford range with equal probability.",
+      "eligibleSubscribersCount": 1,
+      "activeSubscribersBase": 1,
+      "subscriptionRevenue": 999,
+      "prizePoolAllocationPct": 40,
+      "basePrizePool": 400,
+      "rolloverFromPrevious": 0,
+      "totalPrizePool": 400,
+      "winningNumbers": [
+        16,
+        27,
+        30,
+        35,
+        37
+      ],
+      "tierBreakdown": {
+        "tier5": {
+          "matchCount": 5,
+          "poolSharePct": 40,
+          "allocatedPool": 160,
+          "winnerCount": 0,
+          "perWinnerPrize": 0,
+          "isJackpot": true,
+          "rolledOver": true,
+          "rolloverAmount": 160
+        },
+        "tier4": {
+          "matchCount": 4,
+          "poolSharePct": 35,
+          "allocatedPool": 140,
+          "winnerCount": 0,
+          "perWinnerPrize": 0,
+          "isJackpot": false,
+          "rolledOver": false,
+          "rolloverAmount": 0
+        },
+        "tier3": {
+          "matchCount": 3,
+          "poolSharePct": 25,
+          "allocatedPool": 100,
+          "winnerCount": 0,
+          "perWinnerPrize": 0,
+          "isJackpot": false,
+          "rolledOver": false,
+          "rolloverAmount": 0
+        }
+      },
+      "publishedAt": "2026-09-21T07:57:27.037Z",
+      "publishedBy": "admin@digitalheroes.co.in"
+    },
+    {
+      "id": "DRW-LIFECYCLE-1789977484070",
+      "name": "Championship Invitational Draw",
+      "monthYear": "2026-09",
+      "drawDate": "2026-09-30",
+      "status": "published",
+      "drawMethod": "algorithmic",
+      "drawMethodRationale": "Authoritative frequency distribution across participant scores.",
+      "eligibleSubscribersCount": 1,
+      "activeSubscribersBase": 3,
+      "subscriptionRevenue": 2997,
+      "prizePoolAllocationPct": 40,
+      "basePrizePool": 1998,
+      "rolloverFromPrevious": 10000,
+      "totalPrizePool": 11998,
+      "winningNumbers": [
+        35,
+        38,
+        40,
+        42,
+        44
+      ],
+      "tierBreakdown": {
+        "tier5": {
+          "matchCount": 5,
+          "poolSharePct": 40,
+          "allocatedPool": 4799,
+          "winnerCount": 1,
+          "perWinnerPrize": 4799,
+          "isJackpot": true,
+          "rolledOver": false,
+          "rolloverAmount": 0
+        },
+        "tier4": {
+          "matchCount": 4,
+          "poolSharePct": 35,
+          "allocatedPool": 4199,
+          "winnerCount": 0,
+          "perWinnerPrize": 0,
+          "isJackpot": false,
+          "rolledOver": false,
+          "rolloverAmount": 0
+        },
+        "tier3": {
+          "matchCount": 3,
+          "poolSharePct": 25,
+          "allocatedPool": 3000,
+          "winnerCount": 0,
+          "perWinnerPrize": 0,
+          "isJackpot": false,
+          "rolledOver": false,
+          "rolloverAmount": 0
+        }
+      },
+      "publishedAt": "2026-09-21T07:58:04.071Z",
+      "publishedBy": "admin@digitalheroes.co.in"
+    },
+    {
+      "id": "DRW-TEST-1789977589912",
+      "name": "October 2026 Test Invitational Draw",
+      "monthYear": "2026-10",
+      "drawDate": "2026-10-31",
+      "status": "published",
+      "drawMethod": "algorithmic",
+      "drawMethodRationale": "Algorithmic Draw: Winning numbers were selected through frequency-distribution weighting across 17 active participant Stableford scores, rewarding realistic performance corridors while maintaining competitive variance.",
+      "eligibleSubscribersCount": 4,
+      "activeSubscribersBase": 4,
+      "subscriptionRevenue": 3996,
+      "prizePoolAllocationPct": 40,
+      "basePrizePool": 1598,
+      "rolloverFromPrevious": 0,
+      "totalPrizePool": 1598,
+      "winningNumbers": [
+        18,
+        29,
+        38,
+        40,
+        42
+      ],
+      "tierBreakdown": {
+        "tier5": {
+          "matchCount": 5,
+          "poolSharePct": 40,
+          "allocatedPool": 639,
+          "winnerCount": 0,
+          "perWinnerPrize": 0,
+          "isJackpot": true,
+          "rolledOver": true,
+          "rolloverAmount": 639
+        },
+        "tier4": {
+          "matchCount": 4,
+          "poolSharePct": 35,
+          "allocatedPool": 559,
+          "winnerCount": 0,
+          "perWinnerPrize": 0,
+          "isJackpot": false,
+          "rolledOver": false,
+          "rolloverAmount": 0
+        },
+        "tier3": {
+          "matchCount": 3,
+          "poolSharePct": 25,
+          "allocatedPool": 400,
+          "winnerCount": 3,
+          "perWinnerPrize": 133,
+          "isJackpot": false,
+          "rolledOver": false,
+          "rolloverAmount": 0
+        }
+      },
+      "publishedAt": "2026-09-21T07:59:49.914Z",
+      "publishedBy": "admin@digitalheroes.co.in"
+    },
+    {
+      "id": "DRW-LIFECYCLE-1789977598439",
+      "name": "Championship Invitational Draw",
+      "monthYear": "2026-09",
+      "drawDate": "2026-09-30",
+      "status": "published",
+      "drawMethod": "algorithmic",
+      "drawMethodRationale": "Authoritative frequency distribution across participant scores.",
+      "eligibleSubscribersCount": 1,
+      "activeSubscribersBase": 5,
+      "subscriptionRevenue": 4995,
+      "prizePoolAllocationPct": 40,
+      "basePrizePool": 1998,
+      "rolloverFromPrevious": 10000,
+      "totalPrizePool": 11998,
+      "winningNumbers": [
+        35,
+        38,
+        40,
+        42,
+        44
+      ],
+      "tierBreakdown": {
+        "tier5": {
+          "matchCount": 5,
+          "poolSharePct": 40,
+          "allocatedPool": 4799,
+          "winnerCount": 1,
+          "perWinnerPrize": 4799,
+          "isJackpot": true,
+          "rolledOver": false,
+          "rolloverAmount": 0
+        },
+        "tier4": {
+          "matchCount": 4,
+          "poolSharePct": 35,
+          "allocatedPool": 4199,
+          "winnerCount": 0,
+          "perWinnerPrize": 0,
+          "isJackpot": false,
+          "rolledOver": false,
+          "rolloverAmount": 0
+        },
+        "tier3": {
+          "matchCount": 3,
+          "poolSharePct": 25,
+          "allocatedPool": 3000,
+          "winnerCount": 0,
+          "perWinnerPrize": 0,
+          "isJackpot": false,
+          "rolledOver": false,
+          "rolloverAmount": 0
+        }
+      },
+      "publishedAt": "2026-09-21T07:59:58.442Z",
+      "publishedBy": "admin@digitalheroes.co.in"
     }
   ],
-  "winners": [],
-  "donations": [],
+  "winners": [
+    {
+      "id": "win-1789977598442-5158",
+      "drawId": "DRW-LIFECYCLE-1789977598439",
+      "drawName": "Championship Invitational Draw",
+      "userId": "user-1789977598422",
+      "userName": "Rory McIlroy",
+      "userEmail": "rory.mcilroy.1789977598409@example.com",
+      "matchCount": 5,
+      "matchedNumbers": [
+        35,
+        38,
+        40,
+        42,
+        44
+      ],
+      "userScoresAtDraw": [
+        35,
+        38,
+        40,
+        42,
+        44
+      ],
+      "winningNumbers": [
+        35,
+        38,
+        40,
+        42,
+        44
+      ],
+      "prizeAmount": 4799,
+      "verificationStatus": "approved",
+      "paymentStatus": "paid",
+      "proofImageUrl": "https://images.unsplash.com/photo-official-scorecard.jpg",
+      "proofSubmittedAt": "2026-09-21T07:59:58.479Z",
+      "proofNotes": "Official Golf Ireland handicap scoring portal certificate export.",
+      "reviewedBy": "admin@digitalheroes.co.in",
+      "reviewedAt": "2026-09-21T07:59:58.480Z",
+      "adminNotes": "Scorecard dates verified with club handicap secretary.",
+      "paymentReference": "NEFT-GOLF-IRL-1789977598481",
+      "paidAt": "2026-09-21T07:59:58.481Z"
+    },
+    {
+      "id": "win-1789977589914-3776",
+      "drawId": "DRW-TEST-1789977589912",
+      "drawName": "October 2026 Test Invitational Draw",
+      "userId": "user-1789977589870",
+      "userName": "Tiger Woods",
+      "userEmail": "test.golfer.1789977589863@example.com",
+      "matchCount": 3,
+      "matchedNumbers": [
+        38,
+        40,
+        42
+      ],
+      "userScoresAtDraw": [
+        42,
+        40,
+        38,
+        36,
+        34
+      ],
+      "winningNumbers": [
+        18,
+        29,
+        38,
+        40,
+        42
+      ],
+      "prizeAmount": 133,
+      "verificationStatus": "approved",
+      "paymentStatus": "paid",
+      "proofImageUrl": "https://images.unsplash.com/test-scorecard.jpg",
+      "proofSubmittedAt": "2026-09-21T07:59:49.916Z",
+      "proofNotes": "Official handicap card export",
+      "reviewedBy": "admin@digitalheroes.co.in",
+      "reviewedAt": "2026-09-21T07:59:49.917Z",
+      "adminNotes": "Verified by admin",
+      "paymentReference": "PAY-TEST-998811",
+      "paidAt": "2026-09-21T07:59:49.918Z"
+    },
+    {
+      "id": "win-1789977589914-5023",
+      "drawId": "DRW-TEST-1789977589912",
+      "drawName": "October 2026 Test Invitational Draw",
+      "userId": "user-1789977484062",
+      "userName": "Rory McIlroy",
+      "userEmail": "rory.mcilroy.1789977484054@example.com",
+      "matchCount": 3,
+      "matchedNumbers": [
+        38,
+        40,
+        42
+      ],
+      "userScoresAtDraw": [
+        44,
+        42,
+        40,
+        38,
+        35
+      ],
+      "winningNumbers": [
+        18,
+        29,
+        38,
+        40,
+        42
+      ],
+      "prizeAmount": 133,
+      "verificationStatus": "required",
+      "paymentStatus": "pending"
+    },
+    {
+      "id": "win-1789977589914-4585",
+      "drawId": "DRW-TEST-1789977589912",
+      "drawName": "October 2026 Test Invitational Draw",
+      "userId": "user-1789977447000",
+      "userName": "Tiger Woods",
+      "userEmail": "test.golfer.1789977446994@example.com",
+      "matchCount": 3,
+      "matchedNumbers": [
+        38,
+        40,
+        42
+      ],
+      "userScoresAtDraw": [
+        42,
+        40,
+        38,
+        36,
+        34
+      ],
+      "winningNumbers": [
+        18,
+        29,
+        38,
+        40,
+        42
+      ],
+      "prizeAmount": 133,
+      "verificationStatus": "required",
+      "paymentStatus": "pending"
+    },
+    {
+      "id": "win-1789977484071-9419",
+      "drawId": "DRW-LIFECYCLE-1789977484070",
+      "drawName": "Championship Invitational Draw",
+      "userId": "user-1789977484062",
+      "userName": "Rory McIlroy",
+      "userEmail": "rory.mcilroy.1789977484054@example.com",
+      "matchCount": 5,
+      "matchedNumbers": [
+        35,
+        38,
+        40,
+        42,
+        44
+      ],
+      "userScoresAtDraw": [
+        35,
+        38,
+        40,
+        42,
+        44
+      ],
+      "winningNumbers": [
+        35,
+        38,
+        40,
+        42,
+        44
+      ],
+      "prizeAmount": 4799,
+      "verificationStatus": "approved",
+      "paymentStatus": "paid",
+      "proofImageUrl": "https://images.unsplash.com/photo-official-scorecard.jpg",
+      "proofSubmittedAt": "2026-09-21T07:58:04.090Z",
+      "proofNotes": "Official Golf Ireland handicap scoring portal certificate export.",
+      "reviewedBy": "admin@digitalheroes.co.in",
+      "reviewedAt": "2026-09-21T07:58:04.091Z",
+      "adminNotes": "Scorecard dates verified with club handicap secretary.",
+      "paymentReference": "NEFT-GOLF-IRL-1789977484091",
+      "paidAt": "2026-09-21T07:58:04.091Z"
+    }
+  ],
+  "donations": [
+    {
+      "id": "don-1789977447014",
+      "donorName": "Generous Golfer",
+      "donorEmail": "donor@example.com",
+      "charityId": "charity-1789977447013",
+      "charityName": "Test Junior Golf Foundation",
+      "amount": 5000,
+      "date": "2026-09-21T07:57:27.014Z",
+      "message": "Keep swinging!"
+    },
+    {
+      "id": "don-1789977589882",
+      "donorName": "Generous Golfer",
+      "donorEmail": "donor@example.com",
+      "charityId": "charity-1789977589881",
+      "charityName": "Test Junior Golf Foundation",
+      "amount": 5000,
+      "date": "2026-09-21T07:59:49.882Z",
+      "message": "Keep swinging!"
+    }
+  ],
   "auditLogs": [
+    {
+      "id": "aud-1790015936420",
+      "actor": "sub_1790015936397@example.com",
+      "action": "USER_REGISTERED",
+      "details": "New subscriber registered with monthly plan supporting Macmillan Cancer Support at 15%.",
+      "timestamp": "2026-09-21T18:38:56.402Z",
+      "resultId": "user-1790015936420"
+    },
+    {
+      "id": "aud-1790013640849",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using algorithmic. Numbers: [1, 35, 36, 42, 44]. Winners: 5-match: 0, 4-match: 0, 3-match: 2.",
+      "timestamp": "2026-09-21T18:00:40.849Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790013640829",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using algorithmic. Numbers: [1, 11, 36, 38, 40]. Winners: 5-match: 0, 4-match: 0, 3-match: 2.",
+      "timestamp": "2026-09-21T18:00:40.829Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790013287840",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using algorithmic. Numbers: [32, 35, 38, 40, 42]. Winners: 5-match: 0, 4-match: 2, 3-match: 2.",
+      "timestamp": "2026-09-21T17:54:47.840Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790013285974",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw October 2026 Test Invitational Draw using random. Numbers: [30, 36, 40, 42, 45]. Winners: 5-match: 0, 4-match: 0, 3-match: 2.",
+      "timestamp": "2026-09-21T17:54:45.974Z",
+      "resultId": "DRW-TEST-1789977447034"
+    },
+    {
+      "id": "aud-1790013279910",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using random. Numbers: [11, 13, 17, 27, 37]. Winners: 5-match: 0, 4-match: 0, 3-match: 0.",
+      "timestamp": "2026-09-21T17:54:39.910Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790013276597",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using algorithmic. Numbers: [25, 34, 38, 40, 42]. Winners: 5-match: 0, 4-match: 2, 3-match: 2.",
+      "timestamp": "2026-09-21T17:54:36.597Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790013274834",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using algorithmic. Numbers: [2, 16, 35, 36, 43]. Winners: 5-match: 0, 4-match: 0, 3-match: 0.",
+      "timestamp": "2026-09-21T17:54:34.834Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790013273334",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using algorithmic. Numbers: [5, 33, 37, 38, 42]. Winners: 5-match: 0, 4-match: 0, 3-match: 0.",
+      "timestamp": "2026-09-21T17:54:33.334Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790013264612",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using algorithmic. Numbers: [10, 16, 38, 40, 42]. Winners: 5-match: 0, 4-match: 0, 3-match: 4.",
+      "timestamp": "2026-09-21T17:54:24.612Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012967084",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw October 2026 Test Invitational Draw using algorithmic. Numbers: [29, 36, 38, 40, 42]. Winners: 5-match: 0, 4-match: 2, 3-match: 2.",
+      "timestamp": "2026-09-21T17:49:27.084Z",
+      "resultId": "DRW-TEST-1789977447034"
+    },
+    {
+      "id": "aud-1790012963005",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using random. Numbers: [5, 9, 17, 40, 45]. Winners: 5-match: 0, 4-match: 0, 3-match: 0.",
+      "timestamp": "2026-09-21T17:49:23.005Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012954928",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using random. Numbers: [3, 4, 6, 9, 14]. Winners: 5-match: 0, 4-match: 0, 3-match: 0.",
+      "timestamp": "2026-09-21T17:49:14.928Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012951730",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using algorithmic. Numbers: [7, 19, 38, 40, 42]. Winners: 5-match: 0, 4-match: 0, 3-match: 4.",
+      "timestamp": "2026-09-21T17:49:11.730Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012823295",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using random. Numbers: [1, 8, 28, 37, 40]. Winners: 5-match: 0, 4-match: 0, 3-match: 0.",
+      "timestamp": "2026-09-21T17:47:03.295Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012819027",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using algorithmic. Numbers: [7, 12, 30, 42, 43]. Winners: 5-match: 0, 4-match: 0, 3-match: 0.",
+      "timestamp": "2026-09-21T17:46:59.027Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012640466",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using random. Numbers: [3, 7, 18, 26, 27]. Winners: 5-match: 0, 4-match: 0, 3-match: 0.",
+      "timestamp": "2026-09-21T17:44:00.466Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012637801",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using algorithmic. Numbers: [35, 36, 42, 44, 45]. Winners: 5-match: 0, 4-match: 0, 3-match: 2.",
+      "timestamp": "2026-09-21T17:43:57.801Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012608537",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using algorithmic. Numbers: [11, 35, 41, 42, 44]. Winners: 5-match: 0, 4-match: 0, 3-match: 2.",
+      "timestamp": "2026-09-21T17:43:28.537Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012566583",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using random. Numbers: [22, 26, 30, 36, 39]. Winners: 5-match: 0, 4-match: 0, 3-match: 0.",
+      "timestamp": "2026-09-21T17:42:46.583Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012562863",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using random. Numbers: [4, 10, 16, 21, 31]. Winners: 5-match: 0, 4-match: 0, 3-match: 0.",
+      "timestamp": "2026-09-21T17:42:42.863Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012559177",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using algorithmic. Numbers: [9, 36, 38, 40, 42]. Winners: 5-match: 0, 4-match: 2, 3-match: 2.",
+      "timestamp": "2026-09-21T17:42:39.177Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012557224",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using algorithmic. Numbers: [25, 26, 34, 35, 38]. Winners: 5-match: 0, 4-match: 0, 3-match: 0.",
+      "timestamp": "2026-09-21T17:42:37.224Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012311521",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using algorithmic. Numbers: [34, 36, 38, 40, 44]. Winners: 5-match: 0, 4-match: 2, 3-match: 2.",
+      "timestamp": "2026-09-21T17:38:31.521Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012306018",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw September 2026 Monthly Draw using random. Numbers: [2, 23, 30, 37, 43]. Winners: 5-match: 0, 4-match: 0, 3-match: 0.",
+      "timestamp": "2026-09-21T17:38:26.018Z",
+      "resultId": "DRW-2026-09"
+    },
+    {
+      "id": "aud-1790012047248",
+      "actor": "aryanmotghare92@gmail.com",
+      "action": "USER_REGISTERED",
+      "details": "New subscriber registered with monthly plan supporting Macmillan Cancer Support at 15%.",
+      "timestamp": "2026-09-21T17:34:07.235Z",
+      "resultId": "user-1790012047248"
+    },
+    {
+      "id": "aud-1789977598481",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "MARK_PAYOUT_PAID",
+      "details": "Payout of ₹4,799 disbursed to Rory McIlroy. Ref: NEFT-GOLF-IRL-1789977598481",
+      "timestamp": "2026-09-21T07:59:58.481Z",
+      "resultId": "win-1789977598442-5158"
+    },
+    {
+      "id": "aud-1789977598481",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "APPROVE_VERIFICATION",
+      "details": "Approved verification for Rory McIlroy (Prize ₹4,799). Notes: Scorecard dates verified with club handicap secretary.",
+      "timestamp": "2026-09-21T07:59:58.480Z",
+      "resultId": "win-1789977598442-5158"
+    },
+    {
+      "id": "aud-1789977598479",
+      "actor": "rory.mcilroy.1789977598409@example.com",
+      "action": "SUBMIT_VERIFICATION_PROOF",
+      "details": "Uploaded scorecard verification proof for Championship Invitational Draw (5-Match Prize: ₹4,799).",
+      "timestamp": "2026-09-21T07:59:58.479Z",
+      "resultId": "win-1789977598442-5158"
+    },
+    {
+      "id": "aud-1789977598442",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "PUBLISH_DRAW",
+      "details": "Published draw Championship Invitational Draw (DRW-LIFECYCLE-1789977598439). Winning numbers: [35, 38, 40, 42, 44]. 1 winners generated. Rollover: ₹0.",
+      "timestamp": "2026-09-21T07:59:58.442Z",
+      "resultId": "DRW-LIFECYCLE-1789977598439"
+    },
+    {
+      "id": "aud-1789977598439",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "CREATE_DRAW",
+      "details": "Created new draw: \"Championship Invitational Draw\" (DRW-LIFECYCLE-1789977598439) scheduled for 2026-09-30.",
+      "timestamp": "2026-09-21T07:59:58.439Z",
+      "resultId": "DRW-LIFECYCLE-1789977598439"
+    },
+    {
+      "id": "aud-1789977598423",
+      "actor": "rory.mcilroy.1789977598409@example.com",
+      "action": "USER_REGISTERED",
+      "details": "New subscriber registered with monthly plan supporting Macmillan Cancer Support at 25%.",
+      "timestamp": "2026-09-21T07:59:58.409Z",
+      "resultId": "user-1789977598422"
+    },
+    {
+      "id": "aud-1789977589918",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "MARK_PAYOUT_PAID",
+      "details": "Payout of ₹133 disbursed to Tiger Woods. Ref: PAY-TEST-998811",
+      "timestamp": "2026-09-21T07:59:49.918Z",
+      "resultId": "win-1789977589914-3776"
+    },
+    {
+      "id": "aud-1789977589917",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "APPROVE_VERIFICATION",
+      "details": "Approved verification for Tiger Woods (Prize ₹133). Notes: Verified by admin",
+      "timestamp": "2026-09-21T07:59:49.917Z",
+      "resultId": "win-1789977589914-3776"
+    },
+    {
+      "id": "aud-1789977589916",
+      "actor": "test.golfer.1789977589863@example.com",
+      "action": "SUBMIT_VERIFICATION_PROOF",
+      "details": "Uploaded scorecard verification proof for October 2026 Test Invitational Draw (3-Match Prize: ₹133).",
+      "timestamp": "2026-09-21T07:59:49.916Z",
+      "resultId": "win-1789977589914-3776"
+    },
+    {
+      "id": "aud-1789977589914",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "PUBLISH_DRAW",
+      "details": "Published draw October 2026 Test Invitational Draw (DRW-TEST-1789977589912). Winning numbers: [18, 29, 38, 40, 42]. 3 winners generated. Rollover: ₹639.",
+      "timestamp": "2026-09-21T07:59:49.914Z",
+      "resultId": "DRW-TEST-1789977589912"
+    },
+    {
+      "id": "aud-1789977589913",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw October 2026 Test Invitational Draw using algorithmic. Numbers: [18, 29, 38, 40, 42]. Winners: 5-match: 0, 4-match: 0, 3-match: 3.",
+      "timestamp": "2026-09-21T07:59:49.913Z",
+      "resultId": "DRW-TEST-1789977589912"
+    },
+    {
+      "id": "aud-1789977589912",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "CREATE_DRAW",
+      "details": "Created new draw: \"October 2026 Test Invitational Draw\" (DRW-TEST-1789977589912) scheduled for 2026-10-31.",
+      "timestamp": "2026-09-21T07:59:49.912Z",
+      "resultId": "DRW-TEST-1789977589912"
+    },
+    {
+      "id": "aud-1789977589882",
+      "actor": "donor@example.com",
+      "action": "INDEPENDENT_DONATION",
+      "details": "Direct contribution of ₹5,000 received for \"Test Junior Golf Foundation\".",
+      "timestamp": "2026-09-21T07:59:49.882Z",
+      "resultId": "don-1789977589882"
+    },
+    {
+      "id": "aud-1789977589881",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "CREATE_CHARITY",
+      "details": "Created new charity: \"Test Junior Golf Foundation\" in category youth.",
+      "timestamp": "2026-09-21T07:59:49.881Z",
+      "resultId": "charity-1789977589881"
+    },
+    {
+      "id": "aud-1789977589870",
+      "actor": "test.golfer.1789977589863@example.com",
+      "action": "USER_REGISTERED",
+      "details": "New subscriber registered with monthly plan supporting Ocean Legacy Marine Restoration at 20%.",
+      "timestamp": "2026-09-21T07:59:49.863Z",
+      "resultId": "user-1789977589870"
+    },
+    {
+      "id": "aud-1789977484092",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "MARK_PAYOUT_PAID",
+      "details": "Payout of ₹4,799 disbursed to Rory McIlroy. Ref: NEFT-GOLF-IRL-1789977484091",
+      "timestamp": "2026-09-21T07:58:04.091Z",
+      "resultId": "win-1789977484071-9419"
+    },
+    {
+      "id": "aud-1789977484091",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "APPROVE_VERIFICATION",
+      "details": "Approved verification for Rory McIlroy (Prize ₹4,799). Notes: Scorecard dates verified with club handicap secretary.",
+      "timestamp": "2026-09-21T07:58:04.091Z",
+      "resultId": "win-1789977484071-9419"
+    },
+    {
+      "id": "aud-1789977484090",
+      "actor": "rory.mcilroy.1789977484054@example.com",
+      "action": "SUBMIT_VERIFICATION_PROOF",
+      "details": "Uploaded scorecard verification proof for Championship Invitational Draw (5-Match Prize: ₹4,799).",
+      "timestamp": "2026-09-21T07:58:04.090Z",
+      "resultId": "win-1789977484071-9419"
+    },
+    {
+      "id": "aud-1789977484071",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "PUBLISH_DRAW",
+      "details": "Published draw Championship Invitational Draw (DRW-LIFECYCLE-1789977484070). Winning numbers: [35, 38, 40, 42, 44]. 1 winners generated. Rollover: ₹0.",
+      "timestamp": "2026-09-21T07:58:04.071Z",
+      "resultId": "DRW-LIFECYCLE-1789977484070"
+    },
+    {
+      "id": "aud-1789977484070",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "CREATE_DRAW",
+      "details": "Created new draw: \"Championship Invitational Draw\" (DRW-LIFECYCLE-1789977484070) scheduled for 2026-09-30.",
+      "timestamp": "2026-09-21T07:58:04.070Z",
+      "resultId": "DRW-LIFECYCLE-1789977484070"
+    },
+    {
+      "id": "aud-1789977484062",
+      "actor": "rory.mcilroy.1789977484054@example.com",
+      "action": "USER_REGISTERED",
+      "details": "New subscriber registered with monthly plan supporting Macmillan Cancer Support at 25%.",
+      "timestamp": "2026-09-21T07:58:04.054Z",
+      "resultId": "user-1789977484062"
+    },
+    {
+      "id": "aud-1789977466884",
+      "actor": "rory.mcilroy.1789977466876@example.com",
+      "action": "USER_REGISTERED",
+      "details": "New subscriber registered with monthly plan supporting Macmillan Cancer Support at 25%.",
+      "timestamp": "2026-09-21T07:57:46.876Z",
+      "resultId": "user-1789977466883"
+    },
+    {
+      "id": "aud-1789977447037",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "PUBLISH_DRAW",
+      "details": "Published draw October 2026 Test Invitational Draw (DRW-TEST-1789977447034). Winning numbers: [16, 27, 30, 35, 37]. 0 winners generated. Rollover: ₹160.",
+      "timestamp": "2026-09-21T07:57:27.037Z",
+      "resultId": "DRW-TEST-1789977447034"
+    },
+    {
+      "id": "aud-1789977447036",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "SIMULATE_DRAW",
+      "details": "Simulated draw October 2026 Test Invitational Draw using algorithmic. Numbers: [16, 27, 30, 35, 37]. Winners: 5-match: 0, 4-match: 0, 3-match: 0.",
+      "timestamp": "2026-09-21T07:57:27.036Z",
+      "resultId": "DRW-TEST-1789977447034"
+    },
+    {
+      "id": "aud-1789977447034",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "CREATE_DRAW",
+      "details": "Created new draw: \"October 2026 Test Invitational Draw\" (DRW-TEST-1789977447034) scheduled for 2026-10-31.",
+      "timestamp": "2026-09-21T07:57:27.034Z",
+      "resultId": "DRW-TEST-1789977447034"
+    },
+    {
+      "id": "aud-1789977447014",
+      "actor": "donor@example.com",
+      "action": "INDEPENDENT_DONATION",
+      "details": "Direct contribution of ₹5,000 received for \"Test Junior Golf Foundation\".",
+      "timestamp": "2026-09-21T07:57:27.014Z",
+      "resultId": "don-1789977447014"
+    },
+    {
+      "id": "aud-1789977447013",
+      "actor": "admin@digitalheroes.co.in",
+      "action": "CREATE_CHARITY",
+      "details": "Created new charity: \"Test Junior Golf Foundation\" in category youth.",
+      "timestamp": "2026-09-21T07:57:27.013Z",
+      "resultId": "charity-1789977447013"
+    },
+    {
+      "id": "aud-1789977447000",
+      "actor": "test.golfer.1789977446994@example.com",
+      "action": "USER_REGISTERED",
+      "details": "New subscriber registered with monthly plan supporting Ocean Legacy Marine Restoration at 20%.",
+      "timestamp": "2026-09-21T07:57:26.994Z",
+      "resultId": "user-1789977447000"
+    },
     {
       "id": "aud-1",
       "actor": "admin@digitalheroes.co.in",

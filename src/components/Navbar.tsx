@@ -1,13 +1,12 @@
 /**
  * Digital Heroes — Primary Application Navigation
- * Clean, modern, and purposeful navigation without traditional golf cliches.
+ * Clean, role-segregated navigation for Administrator, Subscriber, and Public Visitor.
  */
 
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { useCurrency } from '../context/CurrencyContext';
 import {
-  Award,
   ChevronDown,
   Heart,
   HelpCircle,
@@ -16,9 +15,7 @@ import {
   Menu,
   PlusCircle,
   Shield,
-  Sparkles,
   Trophy,
-  User,
   X,
 } from 'lucide-react';
 import { ExplainTopic } from './ExplainabilityModal';
@@ -49,6 +46,16 @@ export const Navbar: React.FC<NavbarProps> = ({
     setIsMobileMenuOpen(false);
   };
 
+  const handleBrandClick = () => {
+    if (isAdmin) {
+      handleNav('admin');
+    } else if (isSubscriber) {
+      handleNav('dashboard');
+    } else {
+      handleNav('home');
+    }
+  };
+
   return (
     <header
       id="main-app-header"
@@ -59,93 +66,169 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center gap-8">
           <button
             id="brand-home-btn"
-            onClick={() => handleNav('home')}
+            onClick={handleBrandClick}
             className="flex items-center text-left group focus:outline-hidden hover:opacity-90 transition-opacity"
-            title="Digital Heroes — Play, Give, Create Impact"
+            title={isAdmin ? "Digital Heroes — Admin Operations" : "Digital Heroes — Play, Give, Create Impact"}
           >
             <DigitalHeroesLogo variant="horizontal" size="sm" showTagline={true} />
           </button>
 
-          {/* Desktop Nav Links */}
+          {/* Desktop Nav Links - strictly separated by role */}
           <nav className="hidden md:flex items-center gap-1.5 text-sm font-medium">
-            <button
-              id="nav-play-btn"
-              onClick={() => handleNav('dashboard')}
-              className={`px-3 py-1.5 rounded-lg transition-colors ${
-                currentView === 'dashboard'
-                  ? 'text-emerald-700 font-semibold bg-emerald-50'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-              }`}
-            >
-              Play
-            </button>
+            {isAdmin ? (
+              /* ================= ADMIN NAVIGATION ================= */
+              <>
+                <button
+                  id="nav-admin-console-btn"
+                  onClick={() => handleNav('admin')}
+                  className={`px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 ${
+                    currentView === 'admin'
+                      ? 'text-indigo-700 font-semibold bg-indigo-50 border border-indigo-200'
+                      : 'text-slate-700 hover:text-indigo-700 hover:bg-slate-100'
+                  }`}
+                >
+                  <Shield className="w-4 h-4 text-indigo-600" />
+                  <span>Admin Dashboard</span>
+                </button>
 
-            <button
-              id="nav-impact-btn"
-              onClick={() => handleNav('charities')}
-              className={`px-3 py-1.5 rounded-lg transition-colors ${
-                currentView === 'charities'
-                  ? 'text-emerald-700 font-semibold bg-emerald-50'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-              }`}
-            >
-              Impact
-            </button>
+                <button
+                  id="nav-admin-charities-btn"
+                  onClick={() => handleNav('charities')}
+                  className={`px-3 py-1.5 rounded-lg transition-colors ${
+                    currentView === 'charities'
+                      ? 'text-indigo-700 font-semibold bg-indigo-50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  Charity Directory
+                </button>
 
-            <button
-              id="nav-how-it-works-btn"
-              onClick={() => {
-                if (currentView !== 'home') {
-                  handleNav('home');
-                  setTimeout(() => {
-                    document.getElementById('how-it-works-section')?.scrollIntoView({ behavior: 'smooth' });
-                  }, 100);
-                } else {
-                  document.getElementById('how-it-works-section')?.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
-            >
-              How it Works
-            </button>
+                <button
+                  id="nav-admin-draws-btn"
+                  onClick={() => handleNav('draws')}
+                  className={`px-3 py-1.5 rounded-lg transition-colors ${
+                    currentView === 'draws'
+                      ? 'text-indigo-700 font-semibold bg-indigo-50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  Monthly Draws & Records
+                </button>
+              </>
+            ) : isSubscriber ? (
+              /* ================= SUBSCRIBER NAVIGATION ================= */
+              <>
+                <button
+                  id="nav-play-btn"
+                  onClick={() => handleNav('dashboard')}
+                  className={`px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1.5 ${
+                    currentView === 'dashboard'
+                      ? 'text-emerald-700 font-semibold bg-emerald-50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  <Layers className="w-4 h-4 text-emerald-600" />
+                  <span>Dashboard</span>
+                </button>
 
-            <button
-              id="nav-charities-btn"
-              onClick={() => handleNav('charities')}
-              className={`px-3 py-1.5 rounded-lg transition-colors ${
-                currentView === 'charities'
-                  ? 'text-emerald-700 font-semibold bg-emerald-50'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-              }`}
-            >
-              Charities
-            </button>
+                <button
+                  id="nav-impact-btn"
+                  onClick={() => handleNav('charities')}
+                  className={`px-3 py-1.5 rounded-lg transition-colors ${
+                    currentView === 'charities'
+                      ? 'text-emerald-700 font-semibold bg-emerald-50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  Charities
+                </button>
 
-            <button
-              id="nav-about-btn"
-              onClick={() => handleNav('draws')}
-              className={`px-3 py-1.5 rounded-lg transition-colors ${
-                currentView === 'draws'
-                  ? 'text-emerald-700 font-semibold bg-emerald-50'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-              }`}
-            >
-              Monthly Draws
-            </button>
+                <button
+                  id="nav-about-btn"
+                  onClick={() => handleNav('draws')}
+                  className={`px-3 py-1.5 rounded-lg transition-colors ${
+                    currentView === 'draws'
+                      ? 'text-emerald-700 font-semibold bg-emerald-50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  Monthly Draws
+                </button>
 
-            {/* Admin Console shortcut for testing */}
-            <button
-              id="nav-admin-btn"
-              onClick={() => handleNav('admin')}
-              className={`px-2.5 py-1.5 rounded-lg text-xs transition-colors flex items-center gap-1 ml-2 ${
-                currentView === 'admin'
-                  ? 'text-indigo-700 font-semibold bg-indigo-50 border border-indigo-200'
-                  : 'text-slate-500 hover:text-indigo-700 hover:bg-slate-100'
-              }`}
-            >
-              <Shield className="w-3.5 h-3.5" />
-              <span>Admin</span>
-            </button>
+                <button
+                  id="nav-how-it-works-btn"
+                  onClick={() => {
+                    if (currentView !== 'home') {
+                      handleNav('home');
+                      setTimeout(() => {
+                        document.getElementById('how-it-works-section')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    } else {
+                      document.getElementById('how-it-works-section')?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+                >
+                  How it Works
+                </button>
+              </>
+            ) : (
+              /* ================= VISITOR NAVIGATION ================= */
+              <>
+                <button
+                  id="nav-home-btn"
+                  onClick={() => handleNav('home')}
+                  className={`px-3 py-1.5 rounded-lg transition-colors ${
+                    currentView === 'home'
+                      ? 'text-emerald-700 font-semibold bg-emerald-50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  Overview
+                </button>
+
+                <button
+                  id="nav-charities-btn"
+                  onClick={() => handleNav('charities')}
+                  className={`px-3 py-1.5 rounded-lg transition-colors ${
+                    currentView === 'charities'
+                      ? 'text-emerald-700 font-semibold bg-emerald-50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  Charities
+                </button>
+
+                <button
+                  id="nav-draws-btn"
+                  onClick={() => handleNav('draws')}
+                  className={`px-3 py-1.5 rounded-lg transition-colors ${
+                    currentView === 'draws'
+                      ? 'text-emerald-700 font-semibold bg-emerald-50'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  }`}
+                >
+                  Monthly Draws
+                </button>
+
+                <button
+                  id="nav-how-it-works-visitor-btn"
+                  onClick={() => {
+                    if (currentView !== 'home') {
+                      handleNav('home');
+                      setTimeout(() => {
+                        document.getElementById('how-it-works-section')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 100);
+                    } else {
+                      document.getElementById('how-it-works-section')?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+                >
+                  How it Works
+                </button>
+              </>
+            )}
           </nav>
         </div>
 
@@ -191,8 +274,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* If subscriber and active, provide Log Score quick action */}
-          {currentUser && hasActiveSubscription && (
+          {/* If SUBSCRIBER and active, provide Log Score quick action */}
+          {isSubscriber && hasActiveSubscription && (
             <button
               id="nav-add-score-quick-btn"
               onClick={onOpenScoreModal}
@@ -227,12 +310,22 @@ export const Navbar: React.FC<NavbarProps> = ({
               <button
                 id="nav-user-menu-btn"
                 onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                className="flex items-center gap-2 p-1.5 pl-2.5 pr-2 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 text-slate-800 text-xs transition-colors"
+                className={`flex items-center gap-2 p-1.5 pl-2.5 pr-2 rounded-lg border text-xs transition-colors ${
+                  isAdmin
+                    ? 'bg-indigo-50/60 border-indigo-200 hover:border-indigo-300 text-indigo-950'
+                    : 'bg-slate-50 border-slate-200 hover:border-slate-300 text-slate-800'
+                }`}
               >
-                <div className="w-6 h-6 rounded-full bg-emerald-100 border border-emerald-200 flex items-center justify-center font-bold text-[11px] text-emerald-800">
-                  {currentUser?.name.charAt(0) || 'U'}
+                <div
+                  className={`w-6 h-6 rounded-full border flex items-center justify-center font-bold text-[11px] ${
+                    isAdmin
+                      ? 'bg-indigo-100 border-indigo-300 text-indigo-800'
+                      : 'bg-emerald-100 border-emerald-200 text-emerald-800'
+                  }`}
+                >
+                  {isAdmin ? 'A' : currentUser?.name.charAt(0) || 'U'}
                 </div>
-                <span className="max-w-[110px] truncate font-semibold hidden sm:inline text-slate-800">
+                <span className="max-w-[110px] truncate font-semibold hidden sm:inline">
                   {currentUser?.name}
                 </span>
                 <ChevronDown className="w-3.5 h-3.5 text-slate-500" />
@@ -243,46 +336,106 @@ export const Navbar: React.FC<NavbarProps> = ({
                   id="user-dropdown-menu"
                   className="absolute right-0 mt-2 w-64 bg-white border border-slate-200 rounded-xl shadow-xl p-2 z-50 text-xs animate-in fade-in zoom-in-95 duration-100"
                 >
+                  {/* Account Header */}
                   <div className="p-2.5 border-b border-slate-100 mb-1">
                     <div className="font-bold text-slate-900 text-sm">{currentUser?.name}</div>
                     <div className="text-slate-500 text-[11px] truncate">{currentUser?.email}</div>
+
                     <div className="mt-2 flex items-center gap-1.5">
-                      <span
-                        className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
-                          hasActiveSubscription
-                            ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                            : 'bg-rose-50 text-rose-700 border border-rose-200'
-                        }`}
-                      >
-                        {currentUser?.subscription.status}
-                      </span>
-                      <span className="text-[10px] text-slate-500">
-                        {currentUser?.subscription.plan === 'yearly' ? 'Yearly Plan' : 'Monthly Plan'}
-                      </span>
+                      {isAdmin ? (
+                        <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-indigo-50 text-indigo-700 border border-indigo-200">
+                          Administrator
+                        </span>
+                      ) : (
+                        <>
+                          <span
+                            className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                              hasActiveSubscription
+                                ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                                : 'bg-rose-50 text-rose-700 border border-rose-200'
+                            }`}
+                          >
+                            {currentUser?.subscription.status}
+                          </span>
+                          <span className="text-[10px] text-slate-500">
+                            {currentUser?.subscription.plan === 'yearly' ? 'Yearly Plan' : 'Monthly Plan'}
+                          </span>
+                        </>
+                      )}
                     </div>
                   </div>
 
-                  <button
-                    onClick={() => {
-                      setIsUserMenuOpen(false);
-                      handleNav('dashboard');
-                    }}
-                    className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-700 flex items-center gap-2"
-                  >
-                    <Layers className="w-4 h-4 text-emerald-600" />
-                    <span>Subscriber Dashboard</span>
-                  </button>
+                  {/* ADMIN-SPECIFIC MENU */}
+                  {isAdmin && (
+                    <>
+                      <button
+                        onClick={() => {
+                          setIsUserMenuOpen(false);
+                          handleNav('admin');
+                        }}
+                        className="w-full text-left px-3 py-2 rounded-lg hover:bg-indigo-50 text-indigo-700 font-semibold flex items-center gap-2"
+                      >
+                        <Shield className="w-4 h-4 text-indigo-600" />
+                        <span>Administrator Console</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsUserMenuOpen(false);
+                          handleNav('charities');
+                        }}
+                        className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-700 flex items-center gap-2"
+                      >
+                        <Heart className="w-4 h-4 text-slate-500" />
+                        <span>Charity Directory</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsUserMenuOpen(false);
+                          handleNav('draws');
+                        }}
+                        className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-700 flex items-center gap-2"
+                      >
+                        <Trophy className="w-4 h-4 text-slate-500" />
+                        <span>Monthly Draws</span>
+                      </button>
+                    </>
+                  )}
 
-                  <button
-                    onClick={() => {
-                      setIsUserMenuOpen(false);
-                      handleNav('admin');
-                    }}
-                    className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-700 flex items-center gap-2"
-                  >
-                    <Shield className="w-4 h-4 text-indigo-600" />
-                    <span>Administrator Console</span>
-                  </button>
+                  {/* SUBSCRIBER-SPECIFIC MENU */}
+                  {isSubscriber && (
+                    <>
+                      <button
+                        onClick={() => {
+                          setIsUserMenuOpen(false);
+                          handleNav('dashboard');
+                        }}
+                        className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-emerald-700 font-semibold flex items-center gap-2"
+                      >
+                        <Layers className="w-4 h-4 text-emerald-600" />
+                        <span>Subscriber Dashboard</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsUserMenuOpen(false);
+                          handleNav('charities');
+                        }}
+                        className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-700 flex items-center gap-2"
+                      >
+                        <Heart className="w-4 h-4 text-slate-500" />
+                        <span>Charity Directory</span>
+                      </button>
+                      <button
+                        onClick={() => {
+                          setIsUserMenuOpen(false);
+                          handleNav('draws');
+                        }}
+                        className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 text-slate-700 flex items-center gap-2"
+                      >
+                        <Trophy className="w-4 h-4 text-slate-500" />
+                        <span>Monthly Draws</span>
+                      </button>
+                    </>
+                  )}
 
                   <div className="my-1 border-t border-slate-100" />
 
@@ -290,6 +443,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onClick={() => {
                       setIsUserMenuOpen(false);
                       logout();
+                      handleNav('home');
                     }}
                     className="w-full text-left px-3 py-2 rounded-lg hover:bg-rose-50 text-rose-600 flex items-center gap-2"
                   >
@@ -318,45 +472,128 @@ export const Navbar: React.FC<NavbarProps> = ({
           id="mobile-nav-menu"
           className="md:hidden bg-slate-950 border-b border-slate-800 px-4 py-3 space-y-2 text-sm"
         >
-          <button
-            onClick={() => handleNav('home')}
-            className="block w-full text-left py-2 text-slate-200 hover:text-white font-medium"
-          >
-            Overview
-          </button>
-          <button
-            onClick={() => handleNav('charities')}
-            className="block w-full text-left py-2 text-slate-200 hover:text-white font-medium"
-          >
-            Charity Directory
-          </button>
-          <button
-            onClick={() => handleNav('draws')}
-            className="block w-full text-left py-2 text-slate-200 hover:text-white font-medium"
-          >
-            Monthly Draws & Transparency
-          </button>
-          <button
-            onClick={() => handleNav('dashboard')}
-            className="block w-full text-left py-2 text-emerald-400 font-semibold"
-          >
-            Subscriber Dashboard
-          </button>
-          <button
-            onClick={() => handleNav('admin')}
-            className="block w-full text-left py-2 text-indigo-400 font-semibold"
-          >
-            Administrator Console
-          </button>
-          <button
-            onClick={() => {
-              setIsMobileMenuOpen(false);
-              onOpenExplain('prize-pool');
-            }}
-            className="block w-full text-left py-2 text-slate-400 hover:text-slate-200"
-          >
-            How the System Works
-          </button>
+          {isAdmin ? (
+            <>
+              <button
+                onClick={() => handleNav('admin')}
+                className="block w-full text-left py-2 text-indigo-400 font-semibold"
+              >
+                Administrator Console
+              </button>
+              <button
+                onClick={() => handleNav('charities')}
+                className="block w-full text-left py-2 text-slate-200 hover:text-white font-medium"
+              >
+                Charity Directory
+              </button>
+              <button
+                onClick={() => handleNav('draws')}
+                className="block w-full text-left py-2 text-slate-200 hover:text-white font-medium"
+              >
+                Monthly Draws & Transparency
+              </button>
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  logout();
+                  handleNav('home');
+                }}
+                className="block w-full text-left py-2 text-rose-400 font-medium"
+              >
+                Log Out
+              </button>
+            </>
+          ) : isSubscriber ? (
+            <>
+              <button
+                onClick={() => handleNav('dashboard')}
+                className="block w-full text-left py-2 text-emerald-400 font-semibold"
+              >
+                Subscriber Dashboard
+              </button>
+              <button
+                onClick={() => handleNav('charities')}
+                className="block w-full text-left py-2 text-slate-200 hover:text-white font-medium"
+              >
+                Charity Directory
+              </button>
+              <button
+                onClick={() => handleNav('draws')}
+                className="block w-full text-left py-2 text-slate-200 hover:text-white font-medium"
+              >
+                Monthly Draws & Transparency
+              </button>
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  onOpenExplain('prize-pool');
+                }}
+                className="block w-full text-left py-2 text-slate-400 hover:text-slate-200"
+              >
+                How the System Works
+              </button>
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  logout();
+                  handleNav('home');
+                }}
+                className="block w-full text-left py-2 text-rose-400 font-medium"
+              >
+                Log Out
+              </button>
+            </>
+          ) : (
+            <>
+              <button
+                onClick={() => handleNav('home')}
+                className="block w-full text-left py-2 text-slate-200 hover:text-white font-medium"
+              >
+                Overview
+              </button>
+              <button
+                onClick={() => handleNav('charities')}
+                className="block w-full text-left py-2 text-slate-200 hover:text-white font-medium"
+              >
+                Charity Directory
+              </button>
+              <button
+                onClick={() => handleNav('draws')}
+                className="block w-full text-left py-2 text-slate-200 hover:text-white font-medium"
+              >
+                Monthly Draws & Transparency
+              </button>
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  onOpenExplain('prize-pool');
+                }}
+                className="block w-full text-left py-2 text-slate-400 hover:text-slate-200"
+              >
+                How the System Works
+              </button>
+              <div className="pt-2 border-t border-slate-800 flex gap-2">
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    onOpenAuth('login');
+                  }}
+                  className="flex-1 py-2 text-center rounded-lg bg-slate-800 text-white font-medium text-xs"
+                >
+                  Log In
+                </button>
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    onOpenAuth('signup');
+                  }}
+                  className="flex-1 py-2 text-center rounded-lg bg-emerald-600 text-white font-bold text-xs"
+                >
+                  Get Started
+                </button>
+              </div>
+            </>
+          )}
         </div>
       )}
     </header>
